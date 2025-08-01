@@ -1,12 +1,23 @@
 # Useful code snippit
 
 ## Topics
+- [JavaScript](#javascript)
+  - [appwriteAccount](/appwriteAccount.js)
+  - [automateIndex](/automateIndex.js)
+  - [importScript](/importScript.js)
+  - [fibonacci](/fibonacci.js)
+  - [imageConverter](/imageConverter/convert.js)
+  - [themeStore](/themeStore.js)
+  - [useTheme Hook](/usetheme.jsx.js)
 - [CSS](#css)
   - [Theme](#theme)
   - [Tailwindcss breakpoints](#tailwindcss-breakpoints)
 - [Git](#git)
   - [Commit on any date](#commit-on-any-date)
   - [Change Committer and Author name](#Change-Committer-and-Author-name)
+
+
+## JavaScript
 
 ## CSS
 
