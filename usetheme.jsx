@@ -37,7 +37,7 @@ const useTheme = () => {
   }, [theme]);
 
   // Update the theme and store it only if it is 'dark' or 'light'
-  const handleThemeChange = (newTheme) => {
+  const setCutomTheme = (newTheme) => {
     if (newTheme === 'dark' || newTheme === 'light') {
       localStorage.setItem('theme', newTheme);
     } else {
@@ -46,7 +46,7 @@ const useTheme = () => {
     setTheme(newTheme);
   };
 
-  return { theme, handleThemeChange };
+  return { theme, setCutomTheme };
 };
 
 export default useTheme;
