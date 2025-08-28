@@ -128,8 +128,8 @@ add figma link
 
 :root {
   /* Display */
-  --text-display-lg: 4.8828rem;
-  --text-display-md: 3.9063rem;
+  --text-display-lg: 5rem;
+  --text-display-md: 4rem;
   --text-display-sm: 3.125rem;
 
   /* Heading */
@@ -138,8 +138,8 @@ add figma link
   --text-heading-sm: 2rem;
 
   /* Title */
-  --text-title-lg: 1.9531rem;
-  --text-title-md: 1.5625rem;
+  --text-title-lg: 2rem;
+  --text-title-md: 1.5rem;
   --text-title-sm: 1.25rem;
 
   /* Body */
