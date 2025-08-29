@@ -18,6 +18,46 @@
   - [Typography](#typography)
   - [Tailwindcss breakpoints](#tailwindcss-breakpoints)
 
+### Vite
+
+#### for using alias in vite projects
+
+```js
+// jsconfig.json
+{
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}
+```
+
+```js
+// vite.config.js
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react-swc'
+import tailwindcss from '@tailwindcss/vite'
+
+import { fileURLToPath } from 'url'
+import { dirname, resolve } from 'path'
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [react(), tailwindcss()],
+  server: {
+    host: true
+  },
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, './src'),
+    },
+  },
+})
+```
+
 ## Git
 
 > write in git bash
@@ -125,161 +165,103 @@ add figma link
 [Figma link](link) -->
 
 ```css
-
 :root {
-  /* Display */
-  --text-display-lg: 5rem;
-  --text-display-md: 4rem;
-  --text-display-sm: 3.125rem;
-
-  /* Heading */
-  --text-heading-lg: 3.125rem;
-  --text-heading-md: 2.5rem;
-  --text-heading-sm: 2rem;
-
-  /* Title */
-  --text-title-lg: 2rem;
-  --text-title-md: 1.5rem;
-  --text-title-sm: 1.25rem;
-
-  /* Body */
-  --text-body-lg: 1.25rem;
-  --text-body-md: 1.125rem;
-  --text-body-sm: 1rem;
-
-  /* Label */
-  --text-label-lg: 1rem;
-  --text-label-md: 0.875rem;
-  --text-label-sm: 0.75rem;
+  font-family: "Roboto Flex", sans-serif;
+  font-optical-sizing: auto;
 }
 
 body {
-  font-size: var(--text-body-md);
-  line-height: 1.6;
-  font-weight: 400;
+  /* default properties */
+  font-size: 1.125rem;
+  line-height: 1.5;
+  font-weight: 500;
 }
 
-/* ========== Display ========== */
-.text-display-lg {
-  font-size: var(--text-display-lg);
-  line-height: 1;
-  font-weight: 600;
-  letter-spacing: -0.1rem;
-}
-
-.text-display-md {
-  font-size: var(--text-display-md);
-  line-height: 1;
-  font-weight: 600;
-  letter-spacing: -0.1rem;
-}
-
-.text-display-sm {
-  font-size: var(--text-display-sm);
-  line-height: 1;
-  font-weight: 600;
-  letter-spacing: -0.1rem;
-}
-
-/* ========== Heading ========== */
-.text-heading-lg {
-  font-size: var(--text-heading-lg);
+.text-l9 {
+  font-size: calc((160/16) * 1rem);
   line-height: 1.2;
-  font-weight: 600;
-  letter-spacing: -0.1rem;
 }
 
-.text-heading-md {
-  font-size: var(--text-heading-md);
+.text-l8 {
+  font-size: calc((128/16) * 1rem);
   line-height: 1.2;
-  font-weight: 600;
-  letter-spacing: -0.1rem;
 }
 
-.text-heading-sm {
-  font-size: var(--text-heading-sm);
+.text-l7 {
+  font-size: calc((96/16) * 1rem);
   line-height: 1.2;
-  font-weight: 600;
-  letter-spacing: -0.1rem;
 }
 
-/* ========== Title ========== */
-.text-title-lg {
-  font-size: var(--text-title-lg);
+.text-l6 {
+  font-size: calc((80/16) * 1rem);
+  line-height: 1.3;
+}
+
+.text-l5 {
+  font-size: calc((64/16) * 1rem);
+  line-height: 1.3;
+}
+
+.text-l4 {
+  font-size: calc((48/16) * 1rem);
+  line-height: 1.3;
+}
+
+.text-l3 {
+  font-size: calc((40/16) * 1rem);
   line-height: 1.4;
-  font-weight: 500;
 }
 
-.text-title-md {
-  font-size: var(--text-title-md);
+.text-l2 {
+  font-size: calc((32/16) * 1rem);
   line-height: 1.4;
-  font-weight: 500;
 }
 
-.text-title-sm {
-  font-size: var(--text-title-sm);
+.text-l1 {
+  font-size: calc((24/16) * 1rem);
   line-height: 1.4;
-  font-weight: 500;
 }
 
-/* ========== Body ========== */
-.text-body-lg {
-  font-size: var(--text-body-lg);
+.text-lg {
+  font-size: calc((20/16) * 1rem);
+  line-height: 1.5;
+}
+
+.text-md {
+  font-size: calc((18/16) * 1rem);
+  line-height: 1.5;
+}
+
+.text-sm {
+  font-size: calc((16/16) * 1rem);
+  line-height: 1.5;
+}
+
+.text-s1 {
+  font-size: calc((14/16) * 1rem);
   line-height: 1.6;
-  font-weight: 500;
 }
 
-.text-body-md {
-  font-size: var(--text-body-md);
+.text-s2 {
+  font-size: calc((12/16) * 1rem);
   line-height: 1.6;
-  font-weight: 500;
 }
 
-.text-body-sm {
-  font-size: var(--text-body-sm);
+.text-s3 {
+  font-size: calc((10/16) * 1rem);
   line-height: 1.6;
-  font-weight: 500;
 }
 
-/* ========== Label ========== */
-.text-label-lg {
-  font-size: var(--text-label-lg);
-  line-height: 1.8;
-  font-weight: 400;
-}
-
-.text-label-md {
-  font-size: var(--text-label-md);
-  line-height: 1.8;
-  font-weight: 400;
-}
-
-.text-label-sm {
-  font-size: var(--text-label-sm);
-  line-height: 1.8;
-  font-weight: 400;
-}
-
-/* ========== Bold ========== */
-
-:is(.text-display-lg, .text-display-md, .text-display-sm).bold {
-  font-weight: 800;
-}
-:is(.text-heading-lg, .text-heading-md, .text-heading-sm).bold {
-  font-weight: 800;
-}
-:is(.text-title-lg, .text-title-md, .text-title-sm).bold {
+:is(.text-l1, .text-l2, .text-l3, .text-l4, .text-l5, .text-l6, .text-l7, .text-l8, .text-l9,
+  .text-lg, .text-md, .text-sm,
+  .text-s1, .text-s2, .text-s3).bold {
   font-weight: 700;
-}
-:is(.text-body-lg, .text-body-md, .text-body-sm).bold {
-  font-weight: 700;
-}
-:is(.text-label-lg, .text-label-md, .text-label-sm).bold {
-  font-weight: 600;
 }
 ```
 
 - ### Tailwindcss breakpoints 
+
+tailwindcss breakpoint but custom
 ```css
 @import "tailwindcss";
 
@@ -292,12 +274,12 @@ body {
   --breakpoint-uw: 128rem;
 }
 
-@media (max-width: 639px) {}     /* < sm */
+/* default code */
 @media (min-width: 640px) {}     /* ≥ sm */
 @media (min-width: 768px) {}     /* ≥ md */
 @media (min-width: 1024px) {}    /* ≥ lg */
 @media (min-width: 1280px) {}    /* ≥ xl */
-@media (min-width: 1536px) {}    /* ≥ 2xl */
+@media (min-width: 1536px) {}    /* ≥ wd */
 @media (min-width: 2048px) {}    /* ≥ uw ultrawide 4k */
 @media print {}
 ```
